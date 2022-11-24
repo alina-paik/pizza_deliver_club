@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
-
+  has_many :line_items
+  
   validates :name, presence: true,
                    length: { maximum: 50 }
   validates :description, presence: true,
@@ -7,5 +8,5 @@ class Product < ApplicationRecord
   validates :price, presence: true,
                     numericality: true,
                     length: { in: 1..5 }
-  validates :title_image, presence: true 
+  validates :title_image, presence: true
 end
